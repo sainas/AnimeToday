@@ -25,10 +25,10 @@ default_args = {
 
 
 def read_s3():
-    file2 = open(“~/Insight/output/testfile.txt”,”w”) 
-    file2.write('Hello World) 
-    file2.write('This is our new text file) 
-    file2.write('and this is another line.) 
+    file2 = open('~/Insight/output/testfile.txt','w') 
+    file2.write('Hello World') 
+    file2.write('This is our new text file') 
+    file2.write('and this is another line.') 
     file2.write('Why? Because we can.') 
     file.close() 
 
@@ -37,7 +37,7 @@ def read_s3true():
     s3 = boto3.resource('s3')
     obj = s3.Object('sainabuckettest', 'h1b_input.csv')
     obj.get()['Body'].read().decode('utf-8') 
-    file = open(“~/Insight/output/s33.txt”,”w”) 
+    file = open('~/Insight/output/s33.txt','w') 
     file.write('readfile') 
     file.close()
 
