@@ -49,7 +49,6 @@ for each in rows:
         print('insert record into table failed')
         print(e)
 
-conn.commit()
 cur.close()
 conn.close()
 

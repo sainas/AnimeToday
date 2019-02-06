@@ -6,108 +6,44 @@ from bostondate import bostondate
 
 s3 = boto3.resource('s3')
 # date = bostondate()
-date = '2019-01-31'
-object = s3.Object('animecrawling', date + '/all_anime.txt')
-soup = BeautifulSoup(object.get()['Body'], "lxml")
-li = soup.find_all('li', itemtype='http://schema.org/TVSeries')
-
+date = '2019-02-04'
 conn = psycopg2.connect("host=3.94.63.239 port=5432 dbname=anime user=anime password=anime")
 print("Opened database successfully")
 
-for each in li:
-    a_bf = BeautifulSoup(str(each), "lxml")
-    a = a_bf.find('a')
-    print(each.get('group_id'), a.get('title'))
-    # print(each.get('group_id'), a.get('title'), self.server + a.get('href'))
-    insert_data = "INSERT INTO anime (a_id, a_title, a_url) VALUES (%s, %s, %s) \
-                    ON CONFLICT (a_id) DO NOTHING;  "
+object = s3.Object('animecrawling', date + '/all_anime.txt')
+soup = BeautifulSoup(object.get()['Body'], "lxml")
+li = soup.find_all('li', itemtype='http://schema.org/TVSeries')
+i = 0
+for each in li[600:]:
+    filename = each.get('group_id')
+    object = s3.Object('animecrawling', date + '/' + filename + '.txt')
+    soup = BeautifulSoup(object.get()['Body'], "lxml")
+    div = soup.find_all('div', 'wrapper container-shadow hover-classes')
+    for eachep in div:
+        epid = eachep.find_all('div', 'episode-progress')[0].get('media_id')
+        eptitle = eachep.span.get_text().strip()
+        eptitle2 = eachep.p.get_text().strip()
+        epurl = eachep.a.get('href')
+        fulltitle = eachep.a.get('title')
 
-    data = (each.get('group_id'), each.a.get('title'), each.a.get('href'))
-    try:
-        cur = conn.cursor()
-        cur.execute(insert_data,data)
-        conn.commit()
-        # print("Records created successfully")
-    except Exception as e:
-        print('insert record into table failed')
-        print(e)
 
-    finally:
-        if cur:
-            cur.close()
+        insert_data = '''INSERT INTO episode (a_id, ep_id, ep_title, ep_title2, ep_url, pub_date, full_title) 
+                         VALUES (%s, %s, %s, %s, %s, %s, %s) 
+                         ON CONFLICT (ep_id) DO NOTHING;  '''
 
+        data = (filename, epid, eptitle, eptitle2, epurl, date, fulltitle)
+        # print(date, fulltitle)
+        try:
+            cur = conn.cursor()
+            cur.execute(insert_data,data)
+
+            # print("Records created successfully")
+        except Exception as e:
+            print('insert record into table failed')
+            print(e)
+    i = i+1
+    print(i, filename)
+conn.commit()
 conn.close()
 
-print(len(li))
-
-
-
-
-
-
-# def get_part_vendors():
-""" query part and vendor data from multiple tables"""
-conn = None
-# try:
-conn = psycopg2.connect("host=3.94.63.239 port=5432 dbname=anime user=anime password=anime")
-cur = conn.cursor()
-cur.execute("""
-    SELECT groupid, url, epurl
-    FROM animename;
-""")
-# for row in iter_row(cur, 10):
-# for row in iter_1batchrow(cur, 5):
-#     print(row[1])
-rows = cur.fetchmany(5)
-
-s3 = boto3.resource('s3')
-date = time.strftime("%Y-%m-%d", time.localtime())
-for row in rows:
-    print(row)
-    object = s3.Object('animecrawling', date + '/' + str(row[0]) + '.txt')
-    bf = BeautifulSoup(object.get()['Body'], "lxml")
-    a1 = bf.find('a', "portrait-element block-link titlefix episode")
-    if a1.get('href') != str(row[2]):
-        for string in a1.stripped_strings:
-            info = str(string)
-            break
-        update_data = "UPDATE ANIMENAME\
-                       SET lastupdated = %s, \
-                             epinfo = %s,\
-                              epurl = %s\
-                       WHERE groupid = %s;"
-
-        data = (date, info, a1.get('href'), row[0])
-    # try:
-        cur = conn.cursor()
-        cur.execute(update_data, data)
-        # cur.execute("INSERT INTO ANIMENAME (GROUPID,NAME,URL) \
-        #       VALUES ([" + each.get('group_id') + "],[" +  a.get('title') + "],[" + self.server + a.get('href') +"])");
-        conn.commit()
-        print("Records created successfully")
-    # print(a1.get('href'))
-    # for string in a1.stripped_strings:
-    #     print(string)
-
-# print(rows[0][1])
-# rows = cur.fetchall()
-# cur.close()
-# except (Exception, psycopg2.DatabaseError) as error:
-#     print(error)
-# finally:
-cur.close()
-if conn is not None:
-    conn.close()
-# return rows
-
-# get_part_vendors()
-# s3 = boto3.resource('s3')
-# date = time.strftime("%Y-%m-%d", time.localtime())
-# for row in rows:
-#     object = s3.Object('animecrawling', date + '/' +str(row[0]) +'.txt')
-#     bf = BeautifulSoup(object.get()['Body'], "lxml")
-#     a1 = bf.find('a', "portrait-element block-link titlefix episode")
-#     print(a1.get('href'))
-#     for string in a1.stripped_strings:
-#         print(string)
-
+print('finish')

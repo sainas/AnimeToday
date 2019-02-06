@@ -12,7 +12,8 @@ class Crawling:
         self.target = 'https://www.crunchyroll.com/videos/anime/alpha?group=all'
         self.server = 'https://www.crunchyroll.com'
         self.bucketname = 'animecrawling'
-        self.date = bostondate()
+        # self.date = bostondate()
+        self.date = '2019-02-05'
         self.s3 = boto3.resource('s3')
 
     def save_to_s3(self, filename, content):
@@ -40,4 +41,4 @@ if __name__ == '__main__':
     li = cr.get_crawling_list()
     for each in li:
         cr.crawl_and_save(each)
-        time.sleep(1)
+        # time.sleep(1)
