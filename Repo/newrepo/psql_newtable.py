@@ -42,7 +42,24 @@ cur = conn.cursor()
 # cur.execute('''ALTER TABLE anime ADD a_date date;''')
 
 
-cur.execute('''UPDATE anime SET a_date = '2019-01-31';''')
+# cur.execute('''UPDATE anime SET a_date = '2019-01-31';''')
+
+
+# cur.execute('''ALTER TABLE following ADD PRIMARY KEY(username, a_id);''')
+
+# cur.execute('''DELETE FROM following WHERE (following.username, following.a_id) IN (
+#             SELECT DISTINCT *   FROM following group by username, a_id having count(*) > 1);''')
+#
+# cur.execute('''DROP TABLE animename;''')
+# cur.execute('''CREATE TABLE watchlist(
+#                 username      varchar(20),
+#                 a_id        integer,
+#                 FOREIGN KEY (username) REFERENCES userinfo(username),
+#                 FOREIGN KEY (a_id) REFERENCES anime(a_id),
+#                 PRIMARY KEY (username, a_id)
+#              );''')
+#
+# cur.execute('''SELECT DISTINCT * INTO watchlist FROM following;''')
 
 conn.commit()
 cur.close()

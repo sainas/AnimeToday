@@ -26,7 +26,7 @@ def add_user_to_psql(namelist):
                                  VALUES (%s) 
                                  ON CONFLICT (username) DO NOTHING;  '''
 
-        data = (str(namelist[i]))
+        data = (str(namelist[i]),)
         # print(date, fulltitle)
         try:
             cur = conn.cursor()
@@ -71,7 +71,7 @@ def user_interests_to_psql(namelist, animelist, animenum):
 
 
 if __name__ == "__main__":
-    count = 1
+    count = 49
     length = 5
     namelist=[]
     # namelist = list()

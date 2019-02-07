@@ -1,4 +1,6 @@
 import boto3
+import psycopg2
+import time
 
 
 def send_message( message="Test", topic_name="animetoday"):
@@ -12,11 +14,44 @@ def send_message( message="Test", topic_name="animetoday"):
     #     Message=json.dumps({'default': json.dumps(message)}),
     #     MessageStructure='json'
     # )
-    #
     # Publish a message
     client.publish(Message=message, TopicArn='arn:aws:sns:us-east-1:153770056708:animetoday')
 
-send_message()
+conn = psycopg2.connect("host=3.94.63.239 port=5432 dbname=anime user=anime password=anime")
+print("Opened database successfully")
+cur = conn.cursor()
+insert_data = "SELECT episode.pub_date,  episode.full_title, episode.ep_title2, episode.ep_url\
+ FROM following, episode \
+where episode.a_id = following.a_id and episode.pub_date in ('2019-02-02', '2019-02-01', '2019-02-03') and following.username = 'bikoc' ;"
+insert_data = "SELECT episode.pub_date,  episode.full_title, episode.ep_title2, episode.ep_url\
+ FROM  episode \
+where episode.pub_date in ('2019-02-02', '2019-02-01', '2019-02-03')  ;"
+
+try:
+    cur = conn.cursor()
+    print('1')
+    cur.execute("SELECT  episode.pub_date,  episode.full_title, episode.ep_title2, episode.ep_url\
+  FROM following, episode \
+where episode.a_id = following.a_id and  episode.pub_date in ('2019-02-02', '2019-02-01', '2019-02-03') \
+ and  following.username = 'bikoc' ;")
+    print('2')
+    # time.sleep(20)
+    print('2')
+    rows = cur.fetchall()
+    print("Records created successfully")
+except Exception as e:
+    print('insert record into table failed')
+    print(e)
+        # rows = cur.fetchmany(6)
+
+print('success')
+cur.close()
+conn.close()
+
+message = rows
+for each in rows:
+    print(each)
+# send_message(message)
 # def main(args):
 #     sms_list = args.number
 #     message = " ".join(args.message)
