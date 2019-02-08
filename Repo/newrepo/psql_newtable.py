@@ -61,6 +61,9 @@ cur = conn.cursor()
 #
 # cur.execute('''SELECT DISTINCT * INTO watchlist FROM following;''')
 
+cur.execute('''SELECT * FROM {};'''.format('userinfo'))
+row=cur.fetchall()
+print(row)
 conn.commit()
 cur.close()
 conn.close()

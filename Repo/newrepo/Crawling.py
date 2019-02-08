@@ -12,8 +12,8 @@ class Crawling:
         self.target = 'https://www.crunchyroll.com/videos/anime/alpha?group=all'
         self.server = 'https://www.crunchyroll.com'
         self.bucketname = 'animecrawling'
-        # self.date = bostondate()
-        self.date = '2019-02-05'
+        self.date = bostondate()
+        # self.date = '2019-02-??'
         self.s3 = boto3.resource('s3')
 
     def save_to_s3(self, filename, content):

@@ -3,7 +3,7 @@ from botocore.exceptions import ClientError
 
 # Replace sender@example.com with your "From" address.
 # This address must be verified with Amazon SES.
-SENDER = "Sender Name <animetodayservice@gmail.com>"
+SENDER = "AnimeToday <animetodayservice@gmail.com>"
 
 # Replace recipient@example.com with a "To" address. If your account
 # is still in the sandbox, this address must be verified.
@@ -18,7 +18,7 @@ RECIPIENT = "animetodayuser@gmail.com"
 AWS_REGION = "us-east-1"
 
 # The subject line for the email.
-SUBJECT = "Amazon SES Test (SDK for Python)"
+SUBJECT = "Your New Episodes Today!"
 
 # The email body for recipients with non-HTML email clients.
 BODY_TEXT = ("Amazon SES Test (Python)\r\n"
@@ -27,17 +27,18 @@ BODY_TEXT = ("Amazon SES Test (Python)\r\n"
              )
 
 # The HTML body of the email.
-BODY_HTML = """<html>
-<head></head>
-<body>
-  <h1>Amazon SES Test (SDK for Python)</h1>
-  <p>This email was sent with
-    <a href='https://aws.amazon.com/ses/'>Amazon SES</a> using the
-    <a href='https://aws.amazon.com/sdk-for-python/'>
-      AWS SDK for Python (Boto)</a>.</p>
-</body>
-</html>
-            """
+# BODY_HTML = """<html>
+# <head></head>
+# <body>
+#   <h1>Amazon SES Test (SDK for Python)</h1>
+#   <p>This email was sent with
+#     <a href='https://aws.amazon.com/ses/'>Amazon SES</a> using the
+#     <a href='https://aws.amazon.com/sdk-for-python/'>
+#       AWS SDK for Python (Boto)</a>.</p>
+# </body>
+# </html>
+#             """
+BODY_HTML = """"""
 
 # The character encoding for the email.
 CHARSET = "UTF-8"
