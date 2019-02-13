@@ -1,4 +1,4 @@
-# import boto3
+import boto3
 # from bs4 import BeautifulSoup
 # date = '2019-01-31'
 # id = '270683'
@@ -8,5 +8,10 @@
 #
 # print( soup_e.find('img', itemprop='image').get('src'))
 
-from bostondate import bostondate
-print(bostondate())
+# from bostondate import bostondate
+# print(bostondate())
+
+client = boto3.client("sns")
+
+# Send your sms message.
+client.publish(Message='anime', PhoneNumber='+18584058857')

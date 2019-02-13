@@ -354,6 +354,8 @@ a[x-apple-data-detectors] {
         content2 = content2 + onecontent
     content= content1 + content2 + content3
     return content
+
+
 def sent_one_email(content,emailaddress):
     import boto3
     from botocore.exceptions import ClientError
@@ -441,14 +443,37 @@ def sent_one_email(content,emailaddress):
         print("Email sent! Message ID:"),
         print(response['MessageId'])
 
+def make_it_text(line):
+    content1 = "Hi {} New episodes release! ".format(line[0])
+    content2 = ""
+    num= 0
+    for i in range(len(line[2])):
+        animename = line[2][num][0]
+        # animeurl = line[2][num][1]
+        # eptitle = line[2][num][2]
+        epfulltitle = 'https://www.crunchyroll.com' + line[2][num][3]
+        num = num + 1
+        onecontent = animename + epfulltitle
+        content2 = content2 + onecontent
+    content = content1 + content2
+    return content
+
+def sent_one_text(content, number):
+    client = boto3.client("sns")
+
+    # Send your sms message.
+    client.publish(Message=content, PhoneNumber=number)
+
 date = '2019-02-01'
 rows = get_array(date)
-for line in rows[2:5]:
-    content = make_it_html(line)
-    sent_one_email(content, "animetodayuser@gmail.com")
-    # print(content)
+# for line in rows[2:5]:
+#     content = make_it_html(line)
+#     sent_one_email(content, "animetodayuser@gmail.com")
+#     # print(content)
 
-
+for line in rows[:5]:
+    content = make_it_text(line)
+    sent_one_text(content, "+18584058857")
 # line=[]
 # content = make_it_html(line)
 # print(content)
