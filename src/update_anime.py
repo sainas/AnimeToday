@@ -13,10 +13,10 @@ def update_anime(date):
     conn = psycopg2.connect("host=3.94.63.239 port=5432 dbname=anime user=anime password=anime")
     print("Opened database successfully")
 
-    for each in li[:5]:
+    for each in li:
         a_bf = BeautifulSoup(str(each), "lxml")
         a = a_bf.find('a')
-        # print(each.get('group_id'), a.get('title'))
+        print(each.get('group_id'), a.get('title'))
         # print(each.get('group_id'), a.get('title'), self.server + a.get('href'))
         insert_data = "INSERT INTO anime (a_aid, a_atitle, a_aurl, a_adate) VALUES (%s, %s, %s, %s) \
                         ON CONFLICT (a_aid) DO NOTHING;  "
@@ -61,10 +61,9 @@ def update_anime(date):
     print(len(li))
 
 
-# date = bostondate()
+date = bostondate()
 for i in range(8):
     list = ['05','06','07','08','09','10','11','12']
     date = '2019-02-'+list[i]
     print(date)
     update_anime(date)
-

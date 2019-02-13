@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51c606ee-ebd7-4484-b0a2-a07a27e4a931" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Crawling.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Crawling.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/email_content.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/email_and_text_content.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/untitle.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/untitle.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/update_anime.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/update_anime.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/update_episode.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/update_episode.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -67,8 +65,8 @@
       <file leaf-file-name="get_pic_url.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/get_pic_url.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="551">
-              <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
+            <state relative-caret-position="95">
+              <caret line="17" column="18" lean-forward="true" selection-start-line="8" selection-start-column="8" selection-end-line="18" selection-end-column="19" />
               <folding>
                 <element signature="e#23#38#0" expanded="true" />
               </folding>
@@ -79,17 +77,32 @@
       <file leaf-file-name="untitle.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/untitle.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="16" column="59" lean-forward="true" selection-start-line="16" selection-end-line="16" selection-end-column="59" />
+            <state relative-caret-position="1462">
+              <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="update_anime.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="update_anime.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/update_anime.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1311">
-              <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
+            <state relative-caret-position="108">
+              <caret line="66" column="16" selection-start-line="63" selection-end-line="68" selection-end-column="22" />
+              <folding>
+                <element signature="e#23#38#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="update_episode.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/update_episode.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="122">
+              <caret line="57" column="19" selection-start-line="57" selection-start-column="19" selection-end-line="57" selection-end-column="19" />
               <folding>
                 <element signature="e#23#38#0" expanded="true" />
               </folding>
@@ -107,6 +120,8 @@
       <find>user</find>
       <find>Hi</find>
       <find>Hi</find>
+      <find>272195</find>
+      <find>filename</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -116,9 +131,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/Crawling.py" />
-        <option value="$PROJECT_DIR$/src/untitle.py" />
         <option value="$PROJECT_DIR$/src/email_content.py" />
+        <option value="$PROJECT_DIR$/src/untitle.py" />
         <option value="$PROJECT_DIR$/src/update_anime.py" />
+        <option value="$PROJECT_DIR$/src/update_episode.py" />
       </list>
     </option>
   </component>
@@ -167,7 +183,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.update_anime">
+  <component name="RunManager" selected="Python.untitle">
     <configuration name="email_content" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="AnimeToday" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -229,9 +245,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.untitle" />
         <item itemvalue="Python.update_anime" />
         <item itemvalue="Python.email_content" />
-        <item itemvalue="Python.untitle" />
       </list>
     </recent_temporary>
   </component>
@@ -252,15 +268,15 @@
     <frame x="-7" y="-7" width="1295" height="704" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19828258" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19828258" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.37225044" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.52791876" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Python Console" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.28426397" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.4467005" />
       <window_info id="Favorites" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -276,7 +292,21 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/untitle.py</url>
+          <line>101</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+      <option name="time" value="4" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -297,13 +327,6 @@
           <folding>
             <element signature="e#0#12#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/untitle.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="59" lean-forward="true" selection-start-line="16" selection-end-line="16" selection-end-column="59" />
         </state>
       </provider>
     </entry>
@@ -328,18 +351,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/get_pic_url.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
+        <state relative-caret-position="95">
+          <caret line="17" column="18" lean-forward="true" selection-start-line="8" selection-start-column="8" selection-end-line="18" selection-end-column="19" />
           <folding>
             <element signature="e#23#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/untitle.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1462">
+          <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/update_anime.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1311">
-          <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
+        <state relative-caret-position="108">
+          <caret line="66" column="16" selection-start-line="63" selection-end-line="68" selection-end-column="22" />
+          <folding>
+            <element signature="e#23#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/update_episode.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="57" column="19" selection-start-line="57" selection-start-column="19" selection-end-line="57" selection-end-column="19" />
           <folding>
             <element signature="e#23#38#0" expanded="true" />
           </folding>
