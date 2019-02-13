@@ -9,9 +9,9 @@ def get_pic_null():
         conn = psycopg2.connect("host=3.94.63.239 port=5432 dbname=anime user=anime password=anime")
         cur = conn.cursor()
         cur.execute("""
-            SELECT a_id, a_url
+            SELECT a_aid, a_aurl
             FROM anime
-            WHERE a_pic IS NULL;
+            WHERE a_aimg IS NULL;
         """)
         # rows = cur.fetchmany(6)
         rows = cur.fetchall()
@@ -36,8 +36,8 @@ for each in rows:
     soup = BeautifulSoup(html, "lxml")
     data = (soup.find('img', itemprop='image').get('src'), each[0])
     update_data = "UPDATE anime\
-                   SET a_pic = %s \
-                   WHERE a_id = %s;"
+                   SET a_aimg = %s \
+                   WHERE a_aid = %s;"
 
     try:
 

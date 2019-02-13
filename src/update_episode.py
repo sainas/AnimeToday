@@ -4,10 +4,8 @@ import boto3
 from bs4 import BeautifulSoup
 from bostondate import bostondate
 
-def update_episode(date)
+def update_episode(date):
     s3 = boto3.resource('s3')
-    # date = bostondate()
-    date = '2019-02-04'
     conn = psycopg2.connect("host=3.94.63.239 port=5432 dbname=anime user=anime password=anime")
     print("Opened database successfully")
 
