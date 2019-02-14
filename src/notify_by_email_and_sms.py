@@ -113,7 +113,7 @@ if rows != []:
     print('Connect to AWS SNS: success!')
     client_sns = boto3.client("sns")
     print('Connect to AWS SNS: success!')
-    for line in rows[:1]:
+    for line in rows[:5]:
         body_html = make_it_html(line)
         body_text = make_it_text(line)
         sent_one_email(client_ses,body_text, body_html, "animetodayuser@gmail.com")
