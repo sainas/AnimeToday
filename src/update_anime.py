@@ -2,7 +2,9 @@
 import psycopg2
 import boto3
 from bs4 import BeautifulSoup
+
 from bostondate import bostondate
+
 
 def update_anime(date):
     s3 = boto3.resource('s3')
@@ -27,43 +29,17 @@ def update_anime(date):
             cur.execute(insert_data,data)
             conn.commit()
             print("Records created successfully")
-        except Exception as e:
-            print('insert record into table failed')
-            print(e)
+        except (Exception, psycopg2.DatabaseError) as error:
+            print(error)
+            print('Update anime failed')
+        finally:
+            if cur:
+                cur.close()
 
-        # finally:
-        #     if cur:
-        #         cur.close()
-
-        # object_e = s3.Object('animecrawling', date + '/' + each.get('group_id') + '.txt')
-        # soup_e = BeautifulSoup(object.get()['Body'], "lxml")
-        # a1 = soup_e.find_all('a', "portrait-element block-link titlefix episode")
-        # if a1.get('href') != str(row[2]):
-        #     for string in a1.stripped_strings:
-        #         info = str(string)
-        #         break
-        #     update_data = "UPDATE ANIMENAME\
-        #                        SET lastupdated = %s, \
-        #                              epinfo = %s,\
-        #                               epurl = %s\
-        #                        WHERE groupid = %s;"
-        #
-        #     data = (date, info, a1.get('href'), row[0])
-        #     # try:
-        #     cur = conn.cursor()
-        #     cur.execute(update_data, data)
-        #     # cur.execute("INSERT INTO ANIMENAME (GROUPID,NAME,URL) \
-        #     #       VALUES ([" + each.get('group_id') + "],[" +  a.get('title') + "],[" + self.server + a.get('href') +"])");
-        #
-    conn.commit()
     conn.close()
+    print('Finish', len(li))
 
-    print(len(li))
 
-
-date = bostondate()
-for i in range(8):
-    list = ['05','06','07','08','09','10','11','12']
-    date = '2019-02-'+list[i]
-    print(date)
+if __name__ == '__main__':
+    date = bostondate()
     update_anime(date)

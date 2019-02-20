@@ -29,6 +29,6 @@ dag = DAG(
   default_args=default_args)
 crawling = BashOperator(
   task_id='crawling',
-  bash_command='python /home/ubuntu/Insight/AnimeToday/Repo/newrepo/Crawling.py',
+  bash_command='python /home/ubuntu/Insight/AnimeToday/Repo/newrepo/crawler.py',
   dag = dag)
 

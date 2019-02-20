@@ -2,7 +2,6 @@
 import psycopg2
 import boto3
 from bs4 import BeautifulSoup
-
 from bostondate import bostondate
 
 def update_episode(date):
@@ -36,22 +35,22 @@ def update_episode(date):
             try:
                 cur = conn.cursor()
                 cur.execute(insert_data,data)
-                conn.commit()
-                print("Records created successfully")
-            except (Exception, psycopg2.DatabaseError) as error:
-                print(error)
-                print('Update episode failed')
 
-            finally:
-                if cur:
-                    cur.close()
+                print("Records created successfully")
+            except Exception as e:
+                print('insert record into table failed')
+                print(e)
         i = i+1
         print(i, filename)
-
+    conn.commit()
     conn.close()
-    print('Finish')
+
+    print('finish')
 
 
-if __name__ == '__main__':
-    date = bostondate()
+date = bostondate()
+for i in range(8):
+    list = ['05','06','07','08','09','10','11','12']
+    date = '2019-02-'+list[i]
+    print(date)
     update_episode(date)

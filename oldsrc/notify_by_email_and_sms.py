@@ -3,7 +3,6 @@ import jinja2
 import boto3
 from botocore.exceptions import ClientError
 
-
 def get_array(date):
     conn = psycopg2.connect("host=3.94.63.239 port=5432 dbname=anime user=anime password=anime")
     print('connect to PostgreSQL success')
@@ -20,7 +19,6 @@ def get_array(date):
     conn.close()
     return rows
 
-
 def make_it_html(line):
     templateLoader = jinja2.FileSystemLoader(searchpath="./")
     templateEnv = jinja2.Environment(loader=templateLoader)
@@ -28,7 +26,6 @@ def make_it_html(line):
     template = templateEnv.get_template(TEMPLATE_FILE)
     body_html = template.render(username=line[0], record=line[2])
     return body_html
-
 
 def make_it_text(line):
     content = ['Hi {}! You have new episode(s):\r\n'.format(line[0])]
@@ -100,7 +97,6 @@ def sent_one_email(client, body_text, body_html ,emailaddress):
         print("Email sent! Message ID:"),
         print(response['MessageId'])
 
-
 def sent_one_sms(client,content, number):
     try:
         response = client.publish(Message=content, PhoneNumber=number)
@@ -110,20 +106,18 @@ def sent_one_sms(client,content, number):
         print("Email sent! Message ID:"),
         print(response['MessageId'])
 
-
-if __name__ == '__main__':
-    date = '2019-02-01'
-    rows = get_array(date)
-    if rows:
-        client_ses = boto3.client("ses")
-        print('Connect to AWS SNS: success!')
-        client_sns = boto3.client("sns")
-        print('Connect to AWS SNS: success!')
-        for line in rows[:5]:
-            body_html = make_it_html(line)
-            body_text = make_it_text(line)
-            sent_one_email(client_ses, body_text, body_html, "animetodayuser@gmail.com")
-            sent_one_sms(client_sns, body_text, "+18584058857")
+date = '2019-02-01'
+rows = get_array(date)
+if rows != []:
+    client_ses = boto3.client("ses")
+    print('Connect to AWS SNS: success!')
+    client_sns = boto3.client("sns")
+    print('Connect to AWS SNS: success!')
+    for line in rows[:5]:
+        body_html = make_it_html(line)
+        body_text = make_it_text(line)
+        sent_one_email(client_ses,body_text, body_html, "animetodayuser@gmail.com")
+        sent_one_sms(client_sns,body_text, "+18584058857")
 
 
 
