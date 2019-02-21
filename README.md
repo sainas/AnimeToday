@@ -36,11 +36,10 @@ Built a distributed architecture. Able the pipeline to handle higher volume as w
 
 
 ## Getting Start
-
 ### Basic Pipeline
 #### Prerequisites
 * Installations
-  * postgresql 10
+  * PostgreSQL10
   * python 3.6
   * boto3
   * psycopg2
@@ -59,8 +58,9 @@ Built a distributed architecture. Able the pipeline to handle higher volume as w
   * Airflow 1.10.1
   * Celery 4.1.1
   * RabbitMQ 3.7.0
-## Future Work
+Check [the wiki of this repo](https://github.com/sainas/AnimeToday/wiki/Distributed-Deployment-of-Airflow-on-Ubuntu) to deploy a distributed Airflow architecture!
 
+## Future Work
 * Use Spark to do batch processing
 * Build a front end for user to register and choose animes
 * Set AWS EC2 Auto Scaling Groups Policy to automatically launch more workers as needed
