@@ -15,7 +15,13 @@ Now it only support *crunchyroll.com*. It will expend to more websites in the fu
 
 ## Demo
 
+
 ![email_and_text_demo](./img/demo.png)
+
+<p align="center">
+  Screenshots of the emails and text messages sent by the application
+
+</p>
 
 ## Approaches
 ![pipeline](./img/pipeline.png)
@@ -58,6 +64,7 @@ Built a distributed architecture. Able the pipeline to handle higher volume as w
   * Airflow 1.10.1
   * Celery 4.1.1
   * RabbitMQ 3.7.0
+
 Check [the wiki of this repo](https://github.com/sainas/AnimeToday/wiki/Distributed-Deployment-of-Airflow-on-Ubuntu) to deploy a distributed Airflow architecture!
 
 ## Future Work
