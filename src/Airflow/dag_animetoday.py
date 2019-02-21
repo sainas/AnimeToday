@@ -1,0 +1,55 @@
+# airflow related
+from airflow import DAG
+from airflow.operators.python_operator import PythonOperator
+from airflow.operators.bash_operator import BashOperator
+
+# other packages
+from datetime import datetime
+from datetime import timedelta
+
+default_args = {
+    'owner': 'airflow',
+    'depends_on_past': False,
+    'start_date': datetime(2019, 2, 7),
+    'email_on_failure': False,
+    'email_on_retry': False,
+    'retries': 3,
+    'retry_delay': timedelta(seconds=5),
+}
+
+
+dag = DAG(
+  dag_id='animetoday',
+  description='animetoday',
+  schedule_interval = '00 09 * * *',
+  default_args=default_args)
+  
+crawling = BashOperator(
+  task_id='crawling',
+  bash_command='python3 /home/ubuntu/AnimeToday/src/crawler.py',
+  dag = dag)
+
+updating1 = BashOperator(
+  task_id='update_anime',
+  bash_command='python3 /home/ubuntu/AnimeToday/src/update_anime.py',
+  dag = dag)
+  
+updating2 = BashOperator(
+  task_id='update_episode',
+  bash_command='python3 /home/ubuntu/AnimeToday/src/update_episode.py',
+  dag = dag)
+  
+updating3 = BashOperator(
+  task_id='update_pic_url',
+  bash_command='python3 /home/ubuntu/AnimeToday/src/update_pic_url.py',
+  dag = dag)
+  
+notifying = BashOperator(
+  task_id='notify_by_email_and_sms',
+  bash_command='python3 /home/ubuntu/AnimeToday/src/notify_by_email_and_sms.py',
+  dag = dag)
+  
+crawling >> updating1
+updating1 >> updating2
+updating2 >> updating3
+updating3 >> notifying
