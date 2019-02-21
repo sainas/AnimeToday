@@ -9,7 +9,7 @@
 ## Introduction
 Anime fans always want to keep up with their favorite anime. Let **AnimeToday** help you do it.
 
-**AnimeToday** is an anime tracking application. Instead of checking the website multiple times per day, with **AnimeToday**, you will be notified once the anime you are following have new episodes air. Moreover, it will give you the url of that episode, so that you can start watch with only one click! 
+**AnimeToday** is an anime tracking application. Instead of checking the website multiple times per day, with **AnimeToday**, you will be notified once the anime you are following have new episodes air. Moreover, it will give you the url of the episode, so that you can start watch with only one click! 
 
 Now it only support *crunchyroll.com*. It will expend to more websites in the future.
 
