@@ -9,13 +9,19 @@
 ## Introduction
 Anime fans always want to keep up with their favorite anime. Let **AnimeToday** help you do it.
 
-**AnimeToday** is an anime tracking application. Instead of checking the website multiple times per day, with **AnimeToday**, you will be notified once the anime you are following have new episodes air. Moreover, it will give you the url of that episode, so that you can start watch with only one click! 
+**AnimeToday** is an anime tracking application. Instead of checking the website multiple times per day, with **AnimeToday**, you will be notified once the anime you are following have new episodes air. Moreover, it will give you the url of the episode, so that you can start watch with only one click! 
 
 Now it only support *crunchyroll.com*. It will expend to more websites in the future.
 
 ## Demo
 
+
 ![email_and_text_demo](./img/demo.png)
+
+<p align="center">
+  Screenshots of the emails and text messages sent by the application
+
+</p>
 
 ## Approaches
 ![pipeline](./img/pipeline.png)
@@ -39,7 +45,7 @@ Built a distributed architecture. Able the pipeline to handle higher volume as w
 ### Basic Pipeline
 #### Prerequisites
 * Installations
-  * PostgreSQL10
+  * PostgreSQL 10
   * python 3.6
   * boto3
   * psycopg2
@@ -58,6 +64,7 @@ Built a distributed architecture. Able the pipeline to handle higher volume as w
   * Airflow 1.10.1
   * Celery 4.1.1
   * RabbitMQ 3.7.0
+
 Check [the wiki of this repo](https://github.com/sainas/AnimeToday/wiki/Distributed-Deployment-of-Airflow-on-Ubuntu) to deploy a distributed Airflow architecture!
 
 ## Future Work
