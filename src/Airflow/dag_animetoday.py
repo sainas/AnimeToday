@@ -10,7 +10,7 @@ from datetime import timedelta
 default_args = {
     'owner': 'airflow',
     'depends_on_past': False,
-    'start_date': datetime(2019, 2, 7),
+    'start_date': datetime(2019, 2, 24),
     'email_on_failure': False,
     'email_on_retry': False,
     'retries': 3,
@@ -21,7 +21,7 @@ default_args = {
 dag = DAG(
   dag_id='animetoday',
   description='animetoday',
-  schedule_interval = '00 09 * * *',
+  schedule_interval = '00 08 * * *',
   default_args=default_args)
   
 crawling = BashOperator(
@@ -51,5 +51,6 @@ notifying = BashOperator(
   
 crawling >> updating1
 updating1 >> updating2
-updating2 >> updating3
+updating1 >> updating3
+updating2 >> notifying
 updating3 >> notifying

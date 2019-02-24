@@ -112,14 +112,15 @@ def sent_one_sms(client,content, number):
 
 
 if __name__ == '__main__':
-    date = '2019-02-01'
+    date = '2019-02-19'
     rows = get_array(date)
     if rows:
         client_ses = boto3.client("ses")
         print('Connect to AWS SNS: success!')
         client_sns = boto3.client("sns")
         print('Connect to AWS SNS: success!')
-        for line in rows[:5]:
+        num = min(len(rows), 10)
+        for line in rows[:num]:
             body_html = make_it_html(line)
             body_text = make_it_text(line)
             sent_one_email(client_ses, body_text, body_html, "animetodayuser@gmail.com")

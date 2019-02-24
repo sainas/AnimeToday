@@ -41,6 +41,7 @@ def update_pic_url(rows):
                        SET a_aimg = %s \
                        WHERE a_aid = %s;"
         try:
+            cur = conn.cursor()
             cur.execute(update_data, data)
             conn.commit()
             print(each[0])

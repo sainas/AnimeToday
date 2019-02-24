@@ -14,7 +14,7 @@ def update_episode(date):
     soup = BeautifulSoup(object.get()['Body'], "lxml")
     li = soup.find_all('li', itemtype='http://schema.org/TVSeries')
     i = 0
-    for each in li:
+    for each in li[500:]:
         filename = each.get('group_id')
         object = s3.Object('animecrawling', date + '/' + filename + '.txt')
         soup = BeautifulSoup(object.get()['Body'], "lxml")
