@@ -24,7 +24,7 @@ def get_array(date):
 
 
 def make_it_html(line):
-    templateLoader = jinja2.FileSystemLoader(searchpath="/home/ubuntu/AnimeToday/src/template")
+    templateLoader = jinja2.FileSystemLoader(searchpath="/home/ubuntu/AnimeToday/src/templates")
     templateEnv = jinja2.Environment(loader=templateLoader)
     TEMPLATE_FILE = "email_template.html"
     template = templateEnv.get_template(TEMPLATE_FILE)
