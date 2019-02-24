@@ -24,9 +24,9 @@ def get_array(date):
 
 
 def make_it_html(line):
-    templateLoader = jinja2.FileSystemLoader(searchpath="./")
+    templateLoader = jinja2.FileSystemLoader(searchpath="/home/ubuntu/AnimeToday/src/template")
     templateEnv = jinja2.Environment(loader=templateLoader)
-    TEMPLATE_FILE = "./email_template.html"
+    TEMPLATE_FILE = "email_template.html"
     template = templateEnv.get_template(TEMPLATE_FILE)
     body_html = template.render(username=line[0], record=line[2])
     return body_html
@@ -122,7 +122,7 @@ if __name__ == '__main__':
         print('Connect to AWS SNS: success!')
         client_sns = boto3.client("sns")
         print('Connect to AWS SNS: success!')
-        num = min(len(rows), 10)
+        num = min(len(rows), 1)
         for line in rows[:num]:
             body_html = make_it_html(line)
             body_text = make_it_text(line)

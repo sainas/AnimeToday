@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51c606ee-ebd7-4484-b0a2-a07a27e4a931" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/notify_by_email_and_sms.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/notify_by_email_and_sms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Airflow/dag_animetoday_without_crawling.py" beforeDir="false" afterPath="$PROJECT_DIR$/Airflow/dag_animetoday_without_crawling.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,15 +30,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="175">
               <caret line="55" column="4" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="create_table.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/setup/create_table.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="931">
-              <caret line="49" selection-start-line="49" selection-end-line="51" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -85,11 +76,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dag_animetoday - Copy.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Airflow/dag_animetoday - Copy.py">
+      <file leaf-file-name="dag_animetoday_without_crawling.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Airflow/dag_animetoday_without_crawling.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="50" column="22" lean-forward="true" selection-start-line="50" selection-start-column="22" selection-end-line="50" selection-end-column="22" />
+            <state relative-caret-position="171">
+              <caret line="21" column="32" lean-forward="true" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="37" />
               <folding>
                 <element signature="e#18#41#0" expanded="true" />
               </folding>
@@ -185,10 +176,11 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/notify_by_email_and_sms.py" />
         <option value="$PROJECT_DIR$/Airflow/dag_animetoday - Copy.py" />
+        <option value="$PROJECT_DIR$/Airflow/dag_animetoday_without_crawling.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="948" />
     <option name="width" value="981" />
     <option name="height" value="1044" />
@@ -361,7 +353,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="704" extended-state="6" />
+    <frame x="-7" y="-7" width="1295" height="704" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24590164" />
@@ -399,13 +391,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/setup/generate_user.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="12" column="67" selection-start-line="12" selection-start-column="67" selection-end-line="12" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/crawler.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="855">
@@ -648,6 +633,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="50" column="22" lean-forward="true" selection-start-line="50" selection-start-column="22" selection-end-line="50" selection-end-column="22" />
+          <folding>
+            <element signature="e#18#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Airflow/dag_animetoday_without_crawling.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="21" column="32" lean-forward="true" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="37" />
           <folding>
             <element signature="e#18#41#0" expanded="true" />
           </folding>

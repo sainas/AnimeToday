@@ -19,8 +19,8 @@ default_args = {
 
 
 dag = DAG(
-  dag_id='animetoday',
-  description='animetoday',
+  dag_id='animetoday_without_crawling',
+  description='animetoday_without_crawling',
   schedule_interval = '00 08 * * *',
   default_args=default_args)
 
