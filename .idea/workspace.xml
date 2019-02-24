@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="51c606ee-ebd7-4484-b0a2-a07a27e4a931" name="Default" comment="" />
+    <list default="true" id="51c606ee-ebd7-4484-b0a2-a07a27e4a931" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/src/notify_by_email_and_sms.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/notify_by_email_and_sms.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,8 +67,8 @@
       <file leaf-file-name="notify_by_email_and_sms.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/notify_by_email_and_sms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="33" lean-forward="true" selection-end-line="139" />
+            <state relative-caret-position="263">
+              <caret line="131" lean-forward="true" selection-start-line="131" selection-end-line="131" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -178,7 +180,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="948" />
     <option name="width" value="981" />
     <option name="height" value="1044" />
@@ -362,7 +364,7 @@
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24590164" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.57022" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.15059222" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -644,8 +646,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/notify_by_email_and_sms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="33" lean-forward="true" selection-end-line="139" />
+        <state relative-caret-position="263">
+          <caret line="131" lean-forward="true" selection-start-line="131" selection-end-line="131" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>

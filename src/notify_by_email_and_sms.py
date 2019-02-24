@@ -122,7 +122,7 @@ if __name__ == '__main__':
         print('Connect to AWS SNS: success!')
         client_sns = boto3.client("sns")
         print('Connect to AWS SNS: success!')
-        num = min(len(rows), 1)
+        num = min(len(rows), 10)
         for line in rows[:num]:
             body_html = make_it_html(line)
             body_text = make_it_text(line)
