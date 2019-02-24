@@ -45,7 +45,7 @@ Built a distributed architecture. Able the pipeline to handle higher volume as w
 ### Basic Pipeline
 #### Prerequisites
 * Installations
-  * PostgreSQL10
+  * PostgreSQL 10
   * python 3.6
   * boto3
   * psycopg2
