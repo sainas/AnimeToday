@@ -49,6 +49,7 @@ Built a distributed architecture. Able the pipeline to handle higher volume as w
   * python 3.6
   * boto3
   * psycopg2
+  * bs4
 * Services
   * AWS EC2
   * AWS S3
