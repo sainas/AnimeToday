@@ -3,6 +3,8 @@ import jinja2
 import boto3
 from botocore.exceptions import ClientError
 
+from bostondate import bostondate
+
 
 def get_array(date):
     conn = psycopg2.connect("host=3.94.63.239 port=5432 dbname=anime user=anime password=anime")
@@ -24,7 +26,7 @@ def get_array(date):
 def make_it_html(line):
     templateLoader = jinja2.FileSystemLoader(searchpath="./")
     templateEnv = jinja2.Environment(loader=templateLoader)
-    TEMPLATE_FILE = "email_template.html"
+    TEMPLATE_FILE = "./email_template.html"
     template = templateEnv.get_template(TEMPLATE_FILE)
     body_html = template.render(username=line[0], record=line[2])
     return body_html
@@ -112,7 +114,8 @@ def sent_one_sms(client,content, number):
 
 
 if __name__ == '__main__':
-    date = '2019-02-19'
+    # date = '2019-02-01'
+    date = bostondate()
     rows = get_array(date)
     if rows:
         client_ses = boto3.client("ses")
