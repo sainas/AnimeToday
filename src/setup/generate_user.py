@@ -24,9 +24,9 @@ def add_user_to_psql(namelist):
     conn = psycopg2.connect("host=3.94.63.239 port=5432 dbname=anime user=anime password=anime")
     print("Opened database successfully")
     for i in range(len(namelist)):
-        insert_data = '''INSERT INTO userinfo (username) 
+        insert_data = '''INSERT INTO userinfo (u_username) 
                                  VALUES (%s) 
-                                 ON CONFLICT (username) DO NOTHING;  '''
+                                 ON CONFLICT (u_username) DO NOTHING;  '''
 
         data = (str(namelist[i]),)
         # print(date, fulltitle)
@@ -53,7 +53,7 @@ def user_interests_to_psql(namelist, animelist, animenum):
     for i in range(len(namelist)):
         for j in range(animenum):
             animeid = random.choice(animelist)
-            insert_data = '''INSERT INTO following (username, a_id) 
+            insert_data = '''INSERT INTO following (f_username, f_aid) 
                                      VALUES (%s, %s) 
                                      ON CONFLICT  DO NOTHING;  '''
 
