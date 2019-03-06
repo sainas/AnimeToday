@@ -39,9 +39,10 @@ Built a distributed architecture. Able the pipeline to handle higher volume as w
 
 ![Distributed Airflow Architecture](./img/distributed_airflow_arch.png)
 
+## Deployment
+Check [**the Wiki of This Repo**](https://github.com/sainas/AnimeToday/wiki/Distributed-Deployment-of-Airflow-on-Ubuntu) to deploy a distributed Airflow architecture!
 
-
-## Getting Start
+## Prerequisites
 ### Basic Pipeline
 #### Prerequisites
 * Installations
@@ -66,7 +67,7 @@ Built a distributed architecture. Able the pipeline to handle higher volume as w
   * Celery 4.1.1
   * RabbitMQ 3.7.0
 
-Check [the wiki of this repo](https://github.com/sainas/AnimeToday/wiki/Distributed-Deployment-of-Airflow-on-Ubuntu) to deploy a distributed Airflow architecture!
+
 
 ## Future Work
 * Use Spark to do batch processing
