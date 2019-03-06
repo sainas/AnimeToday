@@ -40,7 +40,7 @@ Built a distributed architecture. Able the pipeline to handle higher volume as w
 ![Distributed Airflow Architecture](./img/distributed_airflow_arch.png)
 
 ## Deployment
-Check [**the Wiki of This Repo**](https://github.com/sainas/AnimeToday/wiki/Distributed-Deployment-of-Airflow-on-Ubuntu) to deploy a distributed Airflow architecture!
+Check [**the Wiki of this Repo**](https://github.com/sainas/AnimeToday/wiki/Distributed-Deployment-of-Airflow-on-Ubuntu) to deploy a distributed Airflow architecture!
 
 ## Prerequisites
 ### Basic Pipeline
